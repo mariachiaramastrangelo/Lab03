@@ -7,8 +7,8 @@ import java.util.*;
 
 public class Dictionary {
 	Map<String, String> dizionario= new TreeMap<String, String>();
-	
-	public void loadDictionary(String language) {
+	long start= System.currentTimeMillis();
+	public boolean loadDictionary(String language) {
 		
 		if(language.equals("italian")) {
 			try {
@@ -18,9 +18,12 @@ public class Dictionary {
 				while((word=br.readLine())!=null) {
 					dizionario.put(word, word);
 				}
+				br.close();
+				return true;
 				
 			}catch(IOException e) {
 				System.out.println("Errore nel caricamento del dizionario");
+				return false;
 			}
 			
 		}
@@ -32,10 +35,17 @@ public class Dictionary {
 				while((word=br.readLine())!=null) {
 					dizionario.put(word, word);
 				}
+				br.close();
+				return true;
 				
 			}catch(IOException e) {
+				
 				System.out.println("Errore nel caricamento del dizionario");
+				return false;
 			}
+		}
+		else {
+			return false;
 		}
 	}
 
@@ -70,6 +80,9 @@ public class Dictionary {
 		}
 		return checked;
 	}
-	
+	long end= System.currentTimeMillis();
+	public long tempo() {
+		return end-start;
+	}
 	
 }

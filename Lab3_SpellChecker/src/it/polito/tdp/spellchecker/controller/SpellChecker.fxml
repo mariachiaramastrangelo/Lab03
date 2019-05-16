@@ -20,7 +20,7 @@
                         <Insets right="10.0" />
                      </HBox.margin>
                   </Label>
-                  <ComboBox fx:id="language" prefWidth="150.0" promptText="language" />
+                  <ComboBox fx:id="language" onAction="#doActivation" prefWidth="150.0" promptText="language" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -29,10 +29,10 @@
                   <Insets bottom="10.0" />
                </padding>
             </HBox>
-            <TextArea fx:id="inserimento" />
+            <TextArea fx:id="inserimento" disable="true" />
             <HBox alignment="TOP_RIGHT">
                <children>
-                  <Button alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell check" textAlignment="CENTER" />
+                  <Button fx:id="spellCheck" alignment="BOTTOM_RIGHT" contentDisplay="RIGHT" disable="true" mnemonicParsing="false" onAction="#doSpellCheck" text="Spell check" textAlignment="CENTER" />
                </children>
                <VBox.margin>
                   <Insets bottom="10.0" top="10.0" />
@@ -50,12 +50,12 @@
                         <Insets right="20.0" top="5.0" />
                      </HBox.margin>
                   </Label>
-                  <Button mnemonicParsing="false" onAction="#doClearText" text="Clear Text" />
+                  <Button fx:id="clearText" disable="true" mnemonicParsing="false" onAction="#doClearText" text="Clear Text" />
                </children>
                <padding>
                   <Insets top="10.0" />
                </padding></HBox>
-            <Label text="Tempo impiegato" />
+            <Label fx:id="time" text="Tempo impiegato" />
          </children>
          <BorderPane.margin>
             <Insets top="20.0" />
