@@ -17,7 +17,7 @@ import javafx.scene.control.Label;
 public class SpellCheckerController {
 	
 	
-	private Dictionary model;
+	
 
 
     @FXML
@@ -50,7 +50,8 @@ public class SpellCheckerController {
     
     
     private Dictionary dizionario= new Dictionary();;
-	
+    @SuppressWarnings("unused")
+	private Dictionary model;
     private int counter;
     public void setModel(Dictionary model) {
 		this.model = model;
